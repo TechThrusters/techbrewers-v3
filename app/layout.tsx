@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque } from "next/font/google";
+import { Inter_Tight, Instrument_Serif } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
@@ -8,10 +8,17 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AuthProvider } from '@descope/nextjs-sdk';
 
-const bricolageGrotesque = Bricolage_Grotesque({
+const sans = Inter_Tight({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-bricolage-grotesque",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+});
+
+const serif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
@@ -54,8 +61,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="bg-[#1a1209]" lang="en">
-      <body className={`${bricolageGrotesque.variable} ${bricolageGrotesque.className} bg-[#1a1209]`}>
+    <html className="bg-[#1a1209]" lang="en" suppressHydrationWarning>
+      <body className={`${sans.variable} ${serif.variable} font-sans bg-[#1a1209]`}>
       <AuthProvider 
         projectId={process.env.NEXT_PUBLIC_DESCOPE_PROJECT_ID || ""}
         persistTokens={true}
