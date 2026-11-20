@@ -18,6 +18,10 @@ function PartnerEvents() {
         title="Partner events"
         accent="& meetups."
         intro="Events and meetups we are supporting alongside other developer communities."
+        photos={[
+          { src: "/images/meetup/genai/group3.jpg", alt: "Event attendees at TechBrewers GenAI Meetup", caption: "Attendees, TechBrewers GenAI Meetup" },
+          { src: "/images/meetup/meetup1/group1.jpg", alt: "Group photo at TechBrewers Community Meetup 1.0", caption: "Meetup 1.0" },
+        ]}
       >
         <EventsTabs />
       </PageHeader>

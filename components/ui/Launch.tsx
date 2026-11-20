@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import { Camera } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 /** Mono section label, e.g. "01 — Why TechThrusters". */
@@ -27,38 +29,38 @@ export function SectionLabel({
   );
 }
 
+export type HeaderPhoto = { src: string; alt: string; caption: string };
+
 /**
- * Decorative orbit system: three rings (one dashed) with "satellites" that
- * travel along them. Pure SVG; rotation is disabled by the global
- * prefers-reduced-motion rule.
+ * Two real event photos: a large one and a smaller one overlapping its
+ * corner, captioned with the event they came from.
  */
-export function Orbits({ className, tone = 'ink' }: { className?: string; tone?: 'ink' | 'paper' }) {
-  const ink = tone === 'ink';
-  const ring = ink ? 'rgba(26,18,11,0.22)' : 'rgba(245,240,230,0.22)';
-  const ringStrong = ink ? 'rgba(26,18,11,0.32)' : 'rgba(245,240,230,0.3)';
-  const body = ink ? '#1A120B' : '#F5F0E6';
-  const bg = ink ? '#F5F0E6' : '#2B1209';
+export function PhotoStack({ photos, priority = true }: { photos: HeaderPhoto[]; priority?: boolean }) {
+  const [main, second] = photos;
   return (
-    <div aria-hidden className={cn('pointer-events-none select-none', className)}>
-      {/* outer ring */}
-      <svg viewBox="0 0 600 600" className="absolute inset-0 h-full w-full animate-orbit">
-        <circle cx="300" cy="300" r="292" fill="none" stroke={ring} strokeWidth="1.25" strokeDasharray="3 9" strokeLinecap="round" />
-        <circle cx="300" cy="8" r="9" fill={bg} stroke="#C54F0E" strokeWidth="2" />
-        <circle cx="300" cy="8" r="4" fill="#C54F0E" />
-        <circle cx="47" cy="446" r="5" fill={body} />
-      </svg>
-      {/* middle ring */}
-      <svg viewBox="0 0 600 600" className="absolute inset-0 h-full w-full animate-orbit-slow">
-        <circle cx="300" cy="300" r="218" fill="none" stroke={ringStrong} strokeWidth="1.25" />
-        <circle cx="518" cy="300" r="7" fill="#F6B44B" />
-        <circle cx="146" cy="146" r="3.5" fill={body} />
-      </svg>
-      {/* inner ring */}
-      <svg viewBox="0 0 600 600" className="absolute inset-0 h-full w-full animate-orbit">
-        <circle cx="300" cy="300" r="144" fill="none" stroke={ring} strokeWidth="1.25" strokeDasharray="1 6" strokeLinecap="round" />
-        <circle cx="300" cy="444" r="5" fill="#C54F0E" />
-      </svg>
-    </div>
+    <figure className="relative pb-8 pl-3 sm:pb-10 sm:pl-10">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] border border-ink/10 bg-paper-2 shadow-[0_30px_60px_-35px_rgba(26,18,11,0.55)]">
+        <Image
+          src={main.src}
+          alt={main.alt}
+          fill
+          priority={priority}
+          sizes="(min-width: 1024px) 560px, 100vw"
+          className="object-cover"
+        />
+      </div>
+      {second && (
+        <div className="absolute bottom-0 left-0 w-[44%] overflow-hidden rounded-xl border-[5px] border-paper bg-paper-2 shadow-[0_20px_40px_-20px_rgba(26,18,11,0.6)] sm:w-[40%]">
+          <div className="relative aspect-[4/3]">
+            <Image src={second.src} alt={second.alt} fill sizes="240px" className="object-cover" />
+          </div>
+        </div>
+      )}
+      <figcaption className="absolute bottom-0 right-0 flex max-w-[52%] items-start gap-1.5 text-right font-mono text-[10px] uppercase leading-snug tracking-wider text-ink/50 sm:max-w-[55%] sm:text-[11px]">
+        <Camera className="mt-px h-3 w-3 shrink-0" aria-hidden />
+        <span>{main.caption}</span>
+      </figcaption>
+    </figure>
   );
 }
 
@@ -73,6 +75,7 @@ export function PageHeader({
   intro,
   children,
   align = 'left',
+  photos,
 }: {
   label: string;
   title: React.ReactNode;
@@ -80,40 +83,48 @@ export function PageHeader({
   intro?: React.ReactNode;
   children?: React.ReactNode;
   align?: 'left' | 'center';
+  photos?: HeaderPhoto[];
 }) {
   const center = align === 'center';
   return (
     <section className="relative overflow-hidden bg-paper text-ink">
       <div aria-hidden className="absolute inset-0 star-field fade-edges" />
-      <Orbits className="absolute -right-56 -top-40 h-[440px] w-[440px] opacity-70 sm:-right-24 sm:-top-16 sm:opacity-100 md:h-[600px] md:w-[600px] lg:right-0 lg:top-0" />
       <div
         className={cn(
-          'relative mx-auto max-w-7xl px-6 pb-16 pt-32 md:pb-24 md:pt-44',
-          center && 'text-center'
+          'relative mx-auto grid max-w-7xl items-center gap-12 px-6 pb-16 pt-32 md:pb-20 md:pt-40 lg:gap-16',
+          photos && 'lg:grid-cols-[1.05fr_0.95fr]',
+          center && !photos && 'text-center'
         )}
       >
-        <SectionLabel className={cn(center && 'justify-center')}>{label}</SectionLabel>
-        <h1 className={cn('display mt-5 max-w-4xl text-5xl sm:text-6xl md:text-7xl', center && 'mx-auto')}>
-          {title}
-          {accent && (
-            <>
-              {' '}
-              <span className="trail font-serif font-normal italic tracking-normal text-ember">
-                {accent}
-              </span>
-            </>
+        <div>
+          <SectionLabel className={cn(center && !photos && 'justify-center')}>{label}</SectionLabel>
+          <h1
+            className={cn(
+              'display mt-5 max-w-4xl text-5xl sm:text-6xl md:text-7xl',
+              photos && 'lg:text-[4.25rem] xl:text-7xl',
+              center && !photos && 'mx-auto'
+            )}
+          >
+            {title}
+            {accent && (
+              <>
+                {' '}
+                <span className="font-serif font-normal italic tracking-[-0.01em] text-ember">{accent}</span>
+              </>
+            )}
+          </h1>
+          {intro && (
+            <p className={cn('mt-6 max-w-xl text-lg leading-relaxed text-ink-soft md:text-xl', center && !photos && 'mx-auto')}>
+              {intro}
+            </p>
           )}
-        </h1>
-        {intro && (
-          <p className={cn('mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft md:text-xl', center && 'mx-auto')}>
-            {intro}
-          </p>
-        )}
-        {children && (
-          <div className={cn('mt-9 flex flex-wrap items-center gap-x-6 gap-y-4', center && 'justify-center')}>
-            {children}
-          </div>
-        )}
+          {children && (
+            <div className={cn('mt-9 flex flex-wrap items-center gap-x-6 gap-y-4', center && !photos && 'justify-center')}>
+              {children}
+            </div>
+          )}
+        </div>
+        {photos && photos.length > 0 && <PhotoStack photos={photos} />}
       </div>
     </section>
   );

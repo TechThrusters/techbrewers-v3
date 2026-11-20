@@ -47,11 +47,11 @@ const MeetTheTeam = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease }}
         >
-          <SectionLabel index="04" className="mb-4 justify-center">The crew</SectionLabel>
+          <SectionLabel index="04" className="mb-4 justify-center">The team</SectionLabel>
           <h2 className="font-serif text-5xl leading-[1.05] md:text-7xl">
             The people who make it
             <br />
-            <span className="trail italic text-ember">happen, every day.</span>
+            <span className="italic text-ember">happen, every day.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-ink-soft">
             We&apos;re more than just a team: we&apos;re a close-knit family of passionate individuals.

@@ -87,6 +87,10 @@ const Community = () => {
         title="A community that"
         accent="grows with you."
         intro="Connect with 1,900+ developers, learn from experts, build projects and advance your tech career in a supportive environment."
+        photos={[
+          { src: "/images/meetup/meetup3/group.JPG", alt: "Group photo at TechBrewers Community Meetup 3.0", caption: "Group photo, TechBrewers Meetup 3.0" },
+          { src: "/images/meetup/celcon/celconteam.jpg", alt: "TechBrewers Team at CelCon", caption: "CelCon" },
+        ]}
       >
         <ArrowButton href={DISCORD_URL} external>
           Join the Discord
@@ -104,7 +108,7 @@ const Community = () => {
       <section className="border-y border-ink/10 bg-paper-2">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:py-28 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <motion.div {...scrollReveal(0)} className="lg:sticky lg:top-32 lg:self-start">
-            <SectionLabel index="01" className="mb-4">Mission log</SectionLabel>
+            <SectionLabel index="01" className="mb-4">Our story</SectionLabel>
             <h2 className="display text-4xl md:text-6xl">
               Our{' '}
               <span className="font-serif font-normal italic tracking-normal text-ember">journey</span>

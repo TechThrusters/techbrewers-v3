@@ -10,9 +10,9 @@ import { DISCORD_URL } from '@/lib/constants';
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const stats = [
-  { value: '7+', label: 'Meetups organized', code: 'MISSIONS', image: '/images/thiings/organize.png' },
-  { value: '14+', label: 'Expert speakers', code: 'SPEAKERS', image: '/images/thiings/speaker.png' },
-  { value: '500+', label: 'Total attendees', code: 'CREW', image: '/images/thiings/attendees.png' },
+  { value: '7+', label: 'Meetups organized', image: '/images/thiings/organize.png' },
+  { value: '14+', label: 'Expert speakers', image: '/images/thiings/speaker.png' },
+  { value: '500+', label: 'Total attendees', image: '/images/thiings/attendees.png' },
 ];
 
 const MeetupStats = () => {
@@ -23,6 +23,10 @@ const MeetupStats = () => {
         title="Building community,"
         accent="one meetup at a time."
         intro="Join us as we bring together tech enthusiasts, industry leaders and innovators to learn, connect and grow together."
+        photos={[
+          { src: "/images/meetup/meetup3/crowd.JPG", alt: "Folks attending TechBrewers Meetup 3.0", caption: "TechBrewers Meetup 3.0" },
+          { src: "/images/meetup/meetup3/networking.JPG", alt: "Folks networking at TechBrewers Community Meetup 3.0", caption: "Networking" },
+        ]}
       >
         <ArrowButton href={DISCORD_URL} external>
           Join the Discord
@@ -42,8 +46,7 @@ const MeetupStats = () => {
               >
                 <Image src={s.image} alt="" width={64} height={64} className="h-14 w-14 shrink-0 object-contain md:h-16 md:w-16" />
                 <div>
-                  <div className="font-mono text-[10px] tracking-wider text-ember">{s.code}</div>
-                  <div className="display mt-1 text-4xl text-ink md:text-5xl">{s.value}</div>
+                  <div className="display text-4xl text-ink md:text-5xl">{s.value}</div>
                   <div className="mt-1 text-sm text-ink-soft">{s.label}</div>
                 </div>
               </motion.div>

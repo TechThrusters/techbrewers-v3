@@ -31,6 +31,10 @@ export default function TalksContent() {
         title="TechThrusters"
         accent="Talks."
         intro="Lightning talks, panels and open conversations about real tools, projects and ideas, built for developers who like learning together and shipping in public."
+        photos={[
+          { src: "/images/meetup/meetup3/vj.JPG", alt: "Vijaykumar speaking at TechBrewers Meetup 3.0", caption: "Vijaykumar on stage, TechBrewers Meetup 3.0" },
+          { src: "/images/meetup/meetup2/pralhad.jpg", alt: "Pralhad speaking at TechBrewers Community Meetup 2.0", caption: "Meetup 2.0" },
+        ]}
       >
         <ArrowButton href={TECHTHRUSTERS_TALKS_FORM_URL} external>
           Apply to speak
@@ -78,7 +82,7 @@ export default function TalksContent() {
             <h2 className="font-serif text-5xl leading-[1.05] md:text-6xl">
               Have something to share?
               <br />
-              <span className="trail italic text-flare [--trail-bg:#2B1209]">We&apos;d love to hear it.</span>
+              <span className="italic text-flare">We&apos;d love to hear it.</span>
             </h2>
             <div className="mt-8 max-w-xl space-y-5 leading-relaxed text-paper/75">
               <p>
@@ -109,7 +113,7 @@ export default function TalksContent() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.1, ease }}
           >
-            <p className="eyebrow text-paper/50">Pre-flight checklist</p>
+            <p className="eyebrow text-paper/50">What to include</p>
             <ul className="mt-5 divide-y divide-paper/10">
               {checklist.map((c, i) => (
                 <li key={c.label} className="flex items-center gap-4 py-4">

@@ -24,6 +24,10 @@ function Events() {
         title="Upcoming"
         accent="sessions."
         intro="Talks, workshops and live sessions from the TechThrusters community."
+        photos={[
+          { src: "/images/meetup/genai/session.jpg", alt: "Rahul Ambhore speaking at TechBrewers GenAI Meetup", caption: "Rahul Ambhore, TechBrewers GenAI Meetup" },
+          { src: "/images/meetup/connect/stickers.jpg", alt: "Stickers for audience at TechBrewers Connect", caption: "Stickers at TechBrewers Connect" },
+        ]}
       >
         <EventsTabs />
       </PageHeader>
@@ -62,7 +66,7 @@ function Events() {
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-ember/10 text-ember">
               <Radio className="h-6 w-6" aria-hidden />
             </div>
-            <p className="eyebrow mt-6 text-ink/50">Standing by for launch</p>
+            <p className="eyebrow mt-6 text-ink/50">Nothing scheduled yet</p>
             <h2 className="display mt-3 text-3xl text-ink md:text-4xl">No upcoming sessions right now.</h2>
             <p className="mx-auto mt-3 max-w-md text-ink-soft">
               Check back soon for new events and workshops. In the meantime, catch up on{" "}

@@ -84,7 +84,7 @@ function Team() {
             href="/talks"
             className="group flex flex-col justify-between gap-6 border-b border-r border-ink/10 bg-ink p-5 text-paper transition-colors hover:bg-ember md:p-6"
           >
-            <span className="font-mono text-[10px] tracking-wider text-flare group-hover:text-paper">NEXT UP</span>
+            <span className="font-mono text-[10px] tracking-wider text-flare group-hover:text-paper">Your turn</span>
             <span>
               <span className="block font-serif text-2xl italic leading-tight md:text-3xl">Want to speak?</span>
               <span className="mt-2 inline-flex items-center gap-1 text-xs text-paper/70 group-hover:text-paper">

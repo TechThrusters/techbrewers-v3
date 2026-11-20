@@ -371,9 +371,9 @@ body {
   }
 }
 /* ------------------------------------------------------------------
- * TechThrusters "launch" design system
+ * TechThrusters design system
  * Cream paper + ink, burnt-orange ember accent, serif italic accents,
- * mono mission-control labels, star-field dots and orbit rings.
+ * mono labels and a soft dot grid.
  * ------------------------------------------------------------------ */
 @layer utilities {
   /* light star field: a soft dot grid on paper */
@@ -411,44 +411,4 @@ body {
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
-
-  /* Serif italic accent with a flight path underneath: a hairline that
-     fades in from the left, sits clear of descenders, and ends in a small
-     hollow "orbit node". */
-  .trail {
-    position: relative;
-    display: inline-block;
-    padding-right: 0.32em;
-    padding-bottom: 0.14em;
-  }
-  .trail::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0.3em;
-    bottom: -0.06em;
-    height: max(1.5px, 0.03em);
-    background: linear-gradient(90deg, transparent 0%, currentColor 40%);
-    opacity: 0.55;
-  }
-  .trail::before {
-    content: '';
-    position: absolute;
-    right: 0.06em;
-    bottom: calc(-0.06em - 0.11em + max(0.75px, 0.015em));
-    width: 0.22em;
-    height: 0.22em;
-    min-width: 8px;
-    min-height: 8px;
-    box-sizing: border-box;
-    border-radius: 999px;
-    border: max(1.5px, 0.03em) solid currentColor;
-    background: var(--trail-bg, #F5F0E6);
-  }
-
-  @keyframes orbit-spin {
-    to { transform: rotate(360deg); }
-  }
-  .animate-orbit { animation: orbit-spin 60s linear infinite; }
-  .animate-orbit-slow { animation: orbit-spin 110s linear infinite reverse; }
 }

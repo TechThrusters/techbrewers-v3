@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { Check } from 'lucide-react';
 import Navbar from '@/components/Navbar';
-import { Orbits, SectionLabel } from '@/components/ui/Launch';
+import { SectionLabel } from '@/components/ui/Launch';
 
 const Descope = dynamic(
   () => import('@descope/nextjs-sdk').then((mod) => mod.Descope),
@@ -29,18 +29,17 @@ export default function SignUpPage() {
   return (
     <div className="relative flex min-h-screen flex-col overflow-hidden bg-paper text-ink">
       <div aria-hidden className="absolute inset-0 star-field fade-edges" />
-      <Orbits className="absolute -left-48 top-1/2 hidden h-[640px] w-[640px] -translate-y-1/2 lg:block" />
 
       <Navbar />
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-6 pb-16 pt-32 md:pt-36">
         <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left: pitch */}
           <div className="flex flex-col justify-center">
-            <SectionLabel>Boarding pass</SectionLabel>
+            <SectionLabel>Sign up</SectionLabel>
             <h1 className="display mt-5 text-5xl sm:text-6xl lg:text-7xl">
               Join the{' '}
-              <span className="trail font-serif font-normal italic tracking-normal text-ember">
-                crew.
+              <span className="font-serif font-normal italic tracking-[-0.01em] text-ember">
+                community.
               </span>
             </h1>
 

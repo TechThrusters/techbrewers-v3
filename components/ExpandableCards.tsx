@@ -166,6 +166,10 @@ function ExpandableCards() {
         title="YouTube"
         accent="livestreams."
         intro="Rewatch recorded talks and community sessions from our YouTube channel."
+        photos={[
+          { src: "/images/meetup/celcon/mrunankspeak.jpg", alt: "Mrunank addressing the audience at TechBrewers CelCon", caption: "Mrunank at TechBrewers CelCon" },
+          { src: "/images/meetup/meetup1/tj.jpg", alt: "Touhid and Jeenika speaking at TechBrewers Community Meetup 1.0", caption: "Meetup 1.0" },
+        ]}
       >
         <EventsTabs />
       </PageHeader>

@@ -7,16 +7,15 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import Navbar from './Navbar';
 import { ArrowButton } from './ui/ArrowButton';
-import { Orbits } from './ui/Launch';
 import { DISCORD_URL } from '@/lib/constants';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const stats = [
-  { value: '1,900+', label: 'Members', code: 'CREW', tile: 'bg-flare text-ink', avatar: '/images/header/1.png' },
-  { value: '50+', label: 'Events & workshops', code: 'LAUNCHES', tile: 'bg-paper text-ink ring-1 ring-inset ring-ink/10', avatar: '/images/header/2.png' },
-  { value: '10', label: 'Countries', code: 'REACH', tile: 'bg-espresso text-paper', avatar: '/images/header/3.png' },
-  { value: '4 yrs', label: 'And growing', code: 'IN ORBIT', tile: 'bg-ember text-paper', avatar: '/images/header/5.png' },
+  { value: '1,900+', label: 'Members', tile: 'bg-flare text-ink', avatar: '/images/header/1.png' },
+  { value: '50+', label: 'Events & workshops', tile: 'bg-paper text-ink ring-1 ring-inset ring-ink/10', avatar: '/images/header/2.png' },
+  { value: '10', label: 'Countries', tile: 'bg-espresso text-paper', avatar: '/images/header/3.png' },
+  { value: '4 yrs', label: 'And growing', tile: 'bg-ember text-paper', avatar: '/images/header/5.png' },
 ];
 
 const HeroNew = () => {
@@ -59,7 +58,7 @@ const HeroNew = () => {
             Learn. Connect.
             <br />
             Build{' '}
-            <span className="trail font-serif font-normal italic tracking-normal text-ember">
+            <span className="font-serif font-normal italic tracking-[-0.01em] text-ember">
               together.
             </span>
           </motion.h1>
@@ -86,9 +85,8 @@ const HeroNew = () => {
           </motion.div>
         </div>
 
-        {/* Stat tiles, floating in orbit */}
+        {/* Stat tiles */}
         <div className="relative">
-        <Orbits className="absolute left-1/2 top-1/2 h-[150%] w-[150%] -translate-x-1/2 -translate-y-1/2 sm:h-[165%] sm:w-[165%]" />
         <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
           {stats.map((s, i) => (
             <motion.div
@@ -104,11 +102,8 @@ const HeroNew = () => {
                 i % 2 ? 'sm:translate-y-6' : ''
               }`}
             >
-              <div className="flex items-start justify-between">
-                <div className="relative h-10 w-10 overflow-hidden rounded-full ring-2 ring-white/70 sm:h-14 sm:w-14">
-                  <Image src={s.avatar} alt="" fill sizes="56px" className="scale-110 object-cover" />
-                </div>
-                <span className="font-mono text-[10px] tracking-wider opacity-60">{s.code}</span>
+              <div className="relative h-10 w-10 overflow-hidden rounded-full ring-2 ring-white/70 sm:h-14 sm:w-14">
+                <Image src={s.avatar} alt="" fill sizes="56px" className="scale-110 object-cover" />
               </div>
               <div>
                 <div className="display text-3xl sm:text-5xl">{s.value}</div>
