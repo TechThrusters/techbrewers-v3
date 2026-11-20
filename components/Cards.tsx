@@ -12,7 +12,7 @@ function CardCarousel() {
   return (
     <div className="w-full">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionLabel index="01" className="mb-4">Photo archive</SectionLabel>
+        <SectionLabel className="mb-4">Photo archive</SectionLabel>
         <h2 className="display max-w-3xl text-4xl text-ink md:text-6xl">
           Glimpses from our{" "}
           <span className="accent text-ember">past meetups.</span>

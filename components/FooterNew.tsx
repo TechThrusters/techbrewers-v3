@@ -72,11 +72,11 @@ const FooterNew = () => {
       <div className="relative mx-auto grid max-w-7xl grid-cols-2 gap-x-8 gap-y-12 px-6 py-16 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div className="col-span-2 md:col-span-1">
           <Image
-            src="/images/logo/trans-rect-white.png"
+            src="/images/logo/techthrusters-light.png"
             alt="TechThrusters"
-            width={180}
-            height={54}
-            className="h-12 w-auto object-contain"
+            width={1518}
+            height={479}
+            className="h-11 w-auto object-contain"
           />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-paper/60">
             A free, open community where people learn, connect and build in tech. Together we grow.

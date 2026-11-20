@@ -82,7 +82,7 @@ export default function SignUpPage() {
             <div className="w-full max-w-md rounded-[1.75rem] border border-ink/10 bg-white p-5 shadow-[0_30px_60px_-30px_rgba(26,18,11,0.35)] sm:p-6">
               <div className="mb-2 flex items-center justify-between border-b border-dashed border-ink/15 pb-4">
                 <span className="eyebrow text-ink/50">TechThrusters</span>
-                <span className="font-mono text-[10px] tracking-wider text-ember">SIGN UP / SIGN IN</span>
+                <span className="eyebrow text-ember">Sign up or sign in</span>
               </div>
               {signedIn ? (
                 <div className="flex flex-col items-center justify-center gap-3 py-12 text-center">

@@ -31,7 +31,7 @@ function Sponsors() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease }}
         >
-          <SectionLabel index="03" className="mb-4 justify-center">Past sponsors</SectionLabel>
+          <SectionLabel className="mb-4 justify-center">Past sponsors</SectionLabel>
           <h2 className="display text-4xl text-ink md:text-5xl">
             Fuelled by{" "}
             <span className="accent text-ember">great partners.</span>

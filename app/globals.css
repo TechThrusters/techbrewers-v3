@@ -373,7 +373,8 @@ body {
 /* ------------------------------------------------------------------
  * TechThrusters design system
  * Cream paper + ink, burnt-orange ember accent, serif italic accents,
- * mono labels and a soft dot grid.
+ * small uppercase labels and a soft dot grid. Two typefaces only:
+ * Schibsted Grotesk (sans) and Newsreader (serif accents).
  * ------------------------------------------------------------------ */
 @layer utilities {
   /* light star field: a soft dot grid on paper */
@@ -413,12 +414,11 @@ body {
     font-optical-sizing: auto;
   }
 
-  /* Mono label */
+  /* Small uppercase label */
   .eyebrow {
-    font-family: var(--font-mono), ui-monospace, monospace;
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 }

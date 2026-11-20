@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Schibsted_Grotesk, Newsreader, IBM_Plex_Mono } from "next/font/google";
+import { Schibsted_Grotesk, Newsreader } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
@@ -19,13 +19,6 @@ const serif = Newsreader({
   style: ["normal", "italic"],
   axes: ["opsz"],
   variable: "--font-serif",
-  display: "swap",
-});
-
-const mono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
   display: "swap",
 });
 
@@ -70,7 +63,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className="bg-[#1a1209]" lang="en" suppressHydrationWarning>
-      <body className={`${sans.variable} ${serif.variable} ${mono.variable} font-sans bg-[#1a1209]`}>
+      <body className={`${sans.variable} ${serif.variable} font-sans bg-[#1a1209]`}>
       <AuthProvider 
         projectId={process.env.NEXT_PUBLIC_DESCOPE_PROJECT_ID || ""}
         persistTokens={true}

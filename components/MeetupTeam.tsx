@@ -30,20 +30,18 @@ function Team() {
     <section className="bg-paper">
       <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <motion.div
-          className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end"
+          className="mb-12 max-w-3xl"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease }}
         >
-          <div>
-            <SectionLabel index="02" className="mb-4">Speaker archive</SectionLabel>
-            <h2 className="display max-w-2xl text-4xl text-ink md:text-6xl">
-              The voices who{" "}
-              <span className="accent text-ember">took the stage.</span>
-            </h2>
-          </div>
-          <p className="max-w-sm text-ink-soft">
+          <SectionLabel className="mb-4">Speaker archive</SectionLabel>
+          <h2 className="display text-4xl text-ink md:text-6xl">
+            The voices who{" "}
+            <span className="accent text-ember">took the stage.</span>
+          </h2>
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-soft">
             {people.length} speakers have shared their journeys and insights at our meetups so far.
           </p>
         </motion.div>
@@ -84,7 +82,7 @@ function Team() {
             href="/talks"
             className="group flex flex-col justify-between gap-6 border-b border-r border-ink/10 bg-ink p-5 text-paper transition-colors hover:bg-ember md:p-6"
           >
-            <span className="font-mono text-[10px] tracking-wider text-flare group-hover:text-paper">Your turn</span>
+            <span className="eyebrow text-flare group-hover:text-paper">Your turn</span>
             <span>
               <span className="block text-2xl font-semibold leading-tight tracking-tight md:text-3xl">
                 Want to <span className="accent text-flare group-hover:text-paper">speak?</span>

@@ -47,7 +47,7 @@ const MeetTheTeam = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease }}
         >
-          <SectionLabel index="04" className="mb-4 justify-center">The team</SectionLabel>
+          <SectionLabel className="mb-4 justify-center">The team</SectionLabel>
           <h2 className="display text-4xl md:text-6xl">
             The people who make it
             <br />

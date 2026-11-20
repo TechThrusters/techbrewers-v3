@@ -29,7 +29,6 @@ const config = {
   		fontFamily: {
   			sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
   			serif: ['var(--font-serif)', 'Georgia', 'serif'],
-  			mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
   		},
   		colors: {
   			// Editorial palette (homepage redesign)

@@ -246,9 +246,6 @@ export const Card = ({
         className="group relative z-10 flex h-96 w-64 flex-col items-start justify-end overflow-hidden rounded-[1.75rem] bg-espresso md:h-[34rem] md:w-96"
       >
         <div className="pointer-events-none absolute inset-0 z-30 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
-        <span className="absolute left-5 top-5 z-40 rounded-full bg-paper/90 px-2.5 py-1 font-mono text-[10px] tracking-wider text-ink backdrop-blur">
-          {String(index + 1).padStart(2, "0")}
-        </span>
         <div className="relative z-40 p-6 md:p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}

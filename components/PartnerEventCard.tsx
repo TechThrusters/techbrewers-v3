@@ -3,11 +3,10 @@ import type { PartnerEvent } from "@/data/partnerEvents";
 
 type PartnerEventCardProps = {
   event: PartnerEvent;
-  index?: number;
 };
 
 /** One row in the partner events list: the whole row links to the event page. */
-function PartnerEventCard({ event, index = 0 }: PartnerEventCardProps) {
+function PartnerEventCard({ event }: PartnerEventCardProps) {
   const eventPageUrl = event.eventPageUrl ?? event.registerUrl;
 
   return (
@@ -15,9 +14,8 @@ function PartnerEventCard({ event, index = 0 }: PartnerEventCardProps) {
       href={eventPageUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 border-b border-ink/10 py-6 transition-colors hover:bg-white/60 sm:gap-8 sm:px-4 md:py-8"
+      className="group grid grid-cols-[1fr_auto] items-center gap-4 border-b border-ink/10 py-6 transition-colors hover:bg-white/60 sm:gap-8 sm:px-4 md:py-8"
     >
-      <span className="font-mono text-xs text-ember">/{String(index + 1).padStart(2, "0")}</span>
       <div className="min-w-0">
         <h3 className="display text-2xl text-ink transition-colors group-hover:text-ember md:text-4xl">
           {event.title}

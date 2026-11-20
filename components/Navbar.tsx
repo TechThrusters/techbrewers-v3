@@ -108,13 +108,13 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0">
             <Image
-              src="/images/logo/blacktrans.png"
+              src="/images/logo/techthrusters-dark.png"
               alt="TechThrusters Logo"
-              width={180}
-              height={54}
+              width={461}
+              height={146}
               className={cn(
                 'w-auto object-contain transition-all duration-300',
-                'h-9'
+                'h-9 md:h-10'
               )}
               priority
             />

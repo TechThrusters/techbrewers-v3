@@ -2,29 +2,19 @@ import Image from 'next/image';
 import { Camera } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-/** Mono section label, e.g. "01 — Why TechThrusters". */
+/** Small uppercase section label above a heading. */
 export function SectionLabel({
-  index,
   children,
   className,
   tone = 'ember',
 }: {
-  index?: string;
   children: React.ReactNode;
   className?: string;
   tone?: 'ember' | 'light';
 }) {
   return (
-    <p
-      className={cn(
-        'eyebrow flex items-center gap-2',
-        tone === 'ember' ? 'text-ember' : 'text-flare',
-        className
-      )}
-    >
-      <span className="inline-flex h-1.5 w-1.5 rounded-full bg-current" aria-hidden />
-      {index && <span className="opacity-60">{index} —</span>}
-      <span>{children}</span>
+    <p className={cn('eyebrow', tone === 'ember' ? 'text-ember' : 'text-flare', className)}>
+      {children}
     </p>
   );
 }
@@ -56,7 +46,7 @@ export function PhotoStack({ photos, priority = true }: { photos: HeaderPhoto[];
           </div>
         </div>
       )}
-      <figcaption className="absolute bottom-0 right-0 flex max-w-[52%] items-start gap-1.5 text-right font-mono text-[10px] uppercase leading-snug tracking-wider text-ink/50 sm:max-w-[55%] sm:text-[11px]">
+      <figcaption className="absolute bottom-0 right-0 flex max-w-[52%] items-start gap-1.5 text-right text-xs leading-snug text-ink/55 sm:max-w-[55%]">
         <Camera className="mt-px h-3 w-3 shrink-0" aria-hidden />
         <span>{main.caption}</span>
       </figcaption>

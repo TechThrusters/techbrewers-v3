@@ -108,7 +108,7 @@ const Community = () => {
       <section className="border-y border-ink/10 bg-paper-2">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:py-28 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <motion.div {...scrollReveal(0)} className="lg:sticky lg:top-32 lg:self-start">
-            <SectionLabel index="01" className="mb-4">Our story</SectionLabel>
+            <SectionLabel className="mb-4">Our story</SectionLabel>
             <h2 className="display text-4xl md:text-6xl">
               Our{' '}
               <span className="accent text-ember">journey</span>
@@ -151,7 +151,7 @@ const Community = () => {
                     {item.milestones.map((m) => (
                       <li
                         key={m}
-                        className="rounded-full border border-ink/10 bg-paper px-3 py-1 font-mono text-[11px] text-ink/70"
+                        className="rounded-full border border-ink/10 bg-paper px-3 py-1 text-xs text-ink/70"
                       >
                         {m}
                       </li>
@@ -216,7 +216,7 @@ const FAQSection = () => {
     <section className="relative">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:py-28 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <motion.div {...scrollReveal(0)} className="lg:sticky lg:top-32 lg:self-start">
-          <SectionLabel index="02" className="mb-4">FAQ</SectionLabel>
+          <SectionLabel className="mb-4">FAQ</SectionLabel>
           <h2 className="display text-4xl md:text-6xl">
             Questions,{' '}
             <span className="accent text-ember">answered.</span>
@@ -246,11 +246,8 @@ const FAQSection = () => {
                     id={`faq-button-${index}`}
                     className="group flex w-full items-center justify-between gap-6 py-6 text-left"
                   >
-                    <span className="flex items-baseline gap-4">
-                      <span className="font-mono text-xs text-ember">/0{index + 1}</span>
-                      <span className="text-lg font-semibold tracking-tight transition-colors group-hover:text-ember md:text-xl">
-                        {faq.question}
-                      </span>
+                    <span className="text-lg font-semibold tracking-tight transition-colors group-hover:text-ember md:text-xl">
+                      {faq.question}
                     </span>
                     <span
                       className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
@@ -271,7 +268,7 @@ const FAQSection = () => {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="max-w-2xl pb-6 pl-9 leading-relaxed text-ink-soft">
+                    <div className="max-w-2xl pb-6 leading-relaxed text-ink-soft">
                       {typeof faq.answer === 'string' ? <p>{faq.answer}</p> : faq.answer}
                     </div>
                   </div>

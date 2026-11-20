@@ -43,7 +43,7 @@ const CommunityInfo = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease }}
         >
-          <SectionLabel index="02" className="mb-4">Why TechThrusters</SectionLabel>
+          <SectionLabel className="mb-4">Why TechThrusters</SectionLabel>
           <h2 className="display text-4xl md:text-6xl">
             One community.
             <br />
@@ -75,10 +75,7 @@ const CommunityInfo = () => {
                 <Image src={f.image} alt="" width={72} height={72} className="h-14 w-14 object-contain md:h-16 md:w-16" />
               </div>
               <div>
-                <div className="flex items-baseline gap-3">
-                  <span className="font-mono text-xs text-ember">/0{i + 1}</span>
-                  <h3 className="display text-3xl md:text-4xl">{f.title}</h3>
-                </div>
+                <h3 className="display text-3xl md:text-4xl">{f.title}</h3>
                 <p className="eyebrow mt-3 text-ink/50">{f.kicker}</p>
                 <p className="mt-2 max-w-md leading-relaxed text-ink-soft">{f.description}</p>
               </div>

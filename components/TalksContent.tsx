@@ -53,10 +53,7 @@ export default function TalksContent() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.07, ease }}
               >
-                <div className="flex items-center justify-between">
-                  <f.icon className="h-5 w-5 text-ember" aria-hidden />
-                  <span className="font-mono text-[10px] tracking-wider text-ink/40">/0{i + 1}</span>
-                </div>
+                <f.icon className="h-5 w-5 text-ember" aria-hidden />
                 <h2 className="mt-5 text-xl font-semibold tracking-tight text-ink">{f.title}</h2>
                 <p className="mt-1 text-sm leading-relaxed text-ink-soft">{f.body}</p>
               </motion.div>
@@ -78,7 +75,7 @@ export default function TalksContent() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, ease }}
           >
-            <SectionLabel index="01" tone="light" className="mb-4">How to apply</SectionLabel>
+            <SectionLabel tone="light" className="mb-4">How to apply</SectionLabel>
             <h2 className="display text-4xl md:text-6xl">
               Have something to share?
               <br />
@@ -115,13 +112,12 @@ export default function TalksContent() {
           >
             <p className="eyebrow text-paper/50">What to include</p>
             <ul className="mt-5 divide-y divide-paper/10">
-              {checklist.map((c, i) => (
+              {checklist.map((c) => (
                 <li key={c.label} className="flex items-center gap-4 py-4">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-paper/10 text-flare">
                     <c.icon className="h-4 w-4" aria-hidden />
                   </span>
                   <span className="flex-1 font-medium">{c.label}</span>
-                  <span className="font-mono text-[10px] text-paper/40">0{i + 1}</span>
                 </li>
               ))}
             </ul>

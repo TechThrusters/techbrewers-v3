@@ -35,7 +35,7 @@ const TechThrustersTalks = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.55, ease }}
         >
-          <SectionLabel index="03" tone="light" className="justify-center">
+          <SectionLabel tone="light" className="justify-center">
             TechThrusters Talks
           </SectionLabel>
           <h2

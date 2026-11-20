@@ -3,53 +3,39 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { SOCIAL } from '@/lib/constants';
 import { SectionLabel } from './ui/Launch';
 
-/**
- * How each logo is flattened onto the cream background:
- * - "mono":   white/light artwork on transparency -> black silhouette
- * - "blend":  coloured artwork or white-background JPGs -> greyscale, multiplied
- *             into the paper so white boxes disappear; colour returns on hover
- * - "invert": light artwork on a dark box -> inverted, then multiplied
- */
-export type LogoTone = 'mono' | 'blend' | 'invert';
-
 /** Logos are pre-trimmed to their artwork (see public/images/sponsors/trimmed); w/h are the trimmed pixel sizes. */
-export type Sponsor = { name: string; logo: string; url: string; tone: LogoTone; w: number; h: number };
+export type Sponsor = { name: string; logo: string; url: string; w: number; h: number };
 
 export const SPONSORS: Sponsor[] = [
-  { name: 'GitHub', logo: '/images/sponsors/trimmed/github.png', url: 'https://github.com/', tone: 'mono', w: 640, h: 190 },
-  { name: 'Peerlist', logo: '/images/sponsors/trimmed/peerlist.png', url: 'https://peerlist.io/', tone: 'mono', w: 640, h: 164 },
-  { name: 'Azure Developer Community', logo: '/images/sponsors/trimmed/adc.png', url: 'https://azdev.reskilll.com/', tone: 'blend', w: 580, h: 178 },
-  { name: 'Cloud Native Day Pune', logo: '/images/sponsors/trimmed/cnd.png', url: 'https://www.cloudnativepune.com/', tone: 'blend', w: 381, h: 319 },
-  { name: 'Moneylancer Investments', logo: '/images/sponsors/trimmed/moneylancer.png', url: 'https://mymoneylancer.com/', tone: 'blend', w: 640, h: 640 },
-  { name: 'Securityium', logo: '/images/sponsors/trimmed/securityium.png', url: 'https://www.securityium.com/', tone: 'mono', w: 476, h: 181 },
-  { name: 'GeeksforGeeks', logo: '/images/sponsors/trimmed/gfg.png', url: 'https://www.geeksforgeeks.org/', tone: 'blend', w: 388, h: 206 },
-  { name: 'Daftar', logo: '/images/sponsors/trimmed/daftar.png', url: 'https://www.instagram.com/thedaftar/', tone: 'blend', w: 375, h: 130 },
-  { name: 'Hack2Skill', logo: '/images/sponsors/trimmed/h2s.png', url: 'https://hack2skill.com/', tone: 'mono', w: 417, h: 168 },
-  { name: 'BSides Pune', logo: '/images/sponsors/trimmed/bsidespune.png', url: 'https://www.linkedin.com/company/bsides-pune/', tone: 'blend', w: 484, h: 234 },
-  { name: 'Give My Certificate', logo: '/images/sponsors/trimmed/gmc.png', url: 'https://givemycertificate.com/', tone: 'mono', w: 424, h: 453 },
-  { name: 'Aeka Coffee', logo: '/images/sponsors/trimmed/aeka.png', url: 'https://www.instagram.com/aekascoffee/', tone: 'blend', w: 640, h: 291 },
-  { name: 'Zeeve', logo: '/images/sponsors/trimmed/zeeve.png', url: 'https://www.zeeve.io/', tone: 'blend', w: 417, h: 287 },
-  { name: 'Hack This Fall', logo: '/images/sponsors/trimmed/htf.png', url: 'https://hackthisfall.tech/', tone: 'mono', w: 500, h: 238 },
-  { name: 'Hack The Mountains', logo: '/images/sponsors/trimmed/htm.png', url: 'https://hackthemountain.tech/', tone: 'blend', w: 472, h: 266 },
-  { name: 'Hack The League', logo: '/images/sponsors/trimmed/htl.png', url: 'https://hacktheleague.com/', tone: 'blend', w: 409, h: 494 },
-  { name: 'Pune FOSS 3.0', logo: '/images/sponsors/trimmed/punefoss3.png', url: 'https://fossunited.org/c/pune/punefoss3', tone: 'invert', w: 500, h: 132 },
+  { name: 'GitHub', logo: '/images/sponsors/trimmed/github.png', url: 'https://github.com/', w: 640, h: 190 },
+  { name: 'Peerlist', logo: '/images/sponsors/trimmed/peerlist.png', url: 'https://peerlist.io/', w: 640, h: 164 },
+  { name: 'Azure Developer Community', logo: '/images/sponsors/trimmed/adc.png', url: 'https://azdev.reskilll.com/', w: 579, h: 176 },
+  { name: 'Cloud Native Day Pune', logo: '/images/sponsors/trimmed/cnd.png', url: 'https://www.cloudnativepune.com/', w: 381, h: 319 },
+  { name: 'Moneylancer Investments', logo: '/images/sponsors/trimmed/moneylancer.png', url: 'https://mymoneylancer.com/', w: 640, h: 640 },
+  { name: 'Securityium', logo: '/images/sponsors/trimmed/securityium.png', url: 'https://www.securityium.com/', w: 476, h: 181 },
+  { name: 'GeeksforGeeks', logo: '/images/sponsors/trimmed/gfg.png', url: 'https://www.geeksforgeeks.org/', w: 388, h: 206 },
+  { name: 'Daftar', logo: '/images/sponsors/trimmed/daftar.png', url: 'https://www.instagram.com/thedaftar/', w: 375, h: 130 },
+  { name: 'Hack2Skill', logo: '/images/sponsors/trimmed/h2s.png', url: 'https://hack2skill.com/', w: 417, h: 168 },
+  { name: 'BSides Pune', logo: '/images/sponsors/trimmed/bsidespune.png', url: 'https://www.linkedin.com/company/bsides-pune/', w: 484, h: 234 },
+  { name: 'Give My Certificate', logo: '/images/sponsors/trimmed/gmc.png', url: 'https://givemycertificate.com/', w: 424, h: 455 },
+  { name: 'Aeka Coffee', logo: '/images/sponsors/trimmed/aeka.png', url: 'https://www.instagram.com/aekascoffee/', w: 640, h: 291 },
+  { name: 'Zeeve', logo: '/images/sponsors/trimmed/zeeve.png', url: 'https://www.zeeve.io/', w: 417, h: 287 },
+  { name: 'Hack This Fall', logo: '/images/sponsors/trimmed/htf.png', url: 'https://hackthisfall.tech/', w: 500, h: 238 },
+  { name: 'Hack The Mountains', logo: '/images/sponsors/trimmed/htm.png', url: 'https://hackthemountain.tech/', w: 472, h: 266 },
+  { name: 'Hack The League', logo: '/images/sponsors/trimmed/htl.png', url: 'https://hacktheleague.com/', w: 409, h: 494 },
+  { name: 'Pune FOSS 3.0', logo: '/images/sponsors/trimmed/punefoss3.png', url: 'https://fossunited.org/c/pune/punefoss3', w: 500, h: 132 },
 ];
 
-const toneClass: Record<LogoTone, string> = {
-  mono: 'brightness-0 opacity-70 group-hover:opacity-100',
-  blend: 'grayscale mix-blend-multiply opacity-70 group-hover:grayscale-0 group-hover:opacity-100',
-  invert: 'invert grayscale mix-blend-multiply opacity-70 group-hover:opacity-100',
-};
 
 /**
  * Optical sizing: every logo gets roughly the same visual area, so a wide
  * wordmark and a square badge read as equally important. Sizes scale with
- * the --logo-scale custom property set on the grid (not a transform, which
- * would isolate the blend layer and stop mix-blend-multiply working).
+ * the --logo-scale custom property set on the grid.
+ * Logos keep their real colours; white artwork was recoloured to ink and
+ * white boxes removed in the trimmed files so they read on paper.
  */
 const LOGO_AREA = 6400; // px² at --logo-scale: 1
 const MAX_H = 64;
@@ -77,7 +63,7 @@ export function LogoMark({ sponsor: s }: { sponsor: Sponsor }) {
         alt={s.name}
         fill
         sizes="200px"
-        className={cn('object-contain transition duration-300', toneClass[s.tone])}
+        className="object-contain"
       />
     </div>
   );
@@ -88,20 +74,18 @@ function Sponsors() {
     <section id="partners" className="bg-paper text-ink">
       <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <motion.div
-          className="mb-12 flex flex-col justify-between gap-6 md:mb-14 md:flex-row md:items-end"
+          className="mb-12 max-w-3xl md:mb-14"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div>
-            <SectionLabel index="01" className="mb-4">Sponsors &amp; partners</SectionLabel>
-            <h2 className="display max-w-2xl text-4xl md:text-6xl">
-              Free for everyone, thanks to{' '}
-              <span className="accent text-ember">these folks.</span>
-            </h2>
-          </div>
-          <p className="max-w-sm text-ink-soft">
+          <SectionLabel className="mb-4">Sponsors &amp; partners</SectionLabel>
+          <h2 className="display text-4xl md:text-6xl">
+            Free for everyone, thanks to{' '}
+            <span className="accent text-ember">these folks.</span>
+          </h2>
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-soft">
             TechThrusters is free and open for everyone, made possible by these wonderful sponsors
             and partners who support our events, programs and members.
           </p>

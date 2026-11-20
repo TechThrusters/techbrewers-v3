@@ -202,9 +202,6 @@ function ExpandableCards() {
                     alt=""
                     className="aspect-video w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                   />
-                  <span className="absolute left-3 top-3 rounded-full bg-paper/90 px-2.5 py-1 font-mono text-[10px] tracking-wider text-ink backdrop-blur">
-                    EP.{String(cards.length - index).padStart(2, "0")}
-                  </span>
                   <span className="absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-ember text-paper shadow-lg transition-transform duration-300 group-hover:scale-110">
                     <Play className="ml-0.5 h-4 w-4 fill-current" aria-hidden />
                   </span>
