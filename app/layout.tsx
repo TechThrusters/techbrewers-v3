@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Schibsted_Grotesk, Newsreader } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
@@ -8,10 +8,18 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AuthProvider } from '@descope/nextjs-sdk';
 
-const spaceGrotesk = Space_Grotesk({ 
+const sans = Schibsted_Grotesk({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-space-grotesk",
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const serif = Newsreader({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+  variable: "--font-serif",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -54,8 +62,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="bg-black-100" lang="en">
-      <body className={`${spaceGrotesk.variable} ${spaceGrotesk.className} bg-black-100`}>
+    <html className="bg-[#1a1209]" lang="en" suppressHydrationWarning>
+      <body className={`${sans.variable} ${serif.variable} font-sans bg-[#1a1209]`}>
       <AuthProvider 
         projectId={process.env.NEXT_PUBLIC_DESCOPE_PROJECT_ID || ""}
         persistTokens={true}

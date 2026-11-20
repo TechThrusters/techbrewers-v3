@@ -2,6 +2,9 @@
   "name": "techbrewers-v3",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "26.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,9 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@descope/nextjs-sdk": "^0.14.15",
-    "@react-three/drei": "^9.111.0",
-    "@react-three/fiber": "^8.17.5",
+    "@descope/nextjs-sdk": "^0.15.68",
     "@tabler/icons-react": "^3.12.0",
     "@tsparticles/engine": "^3.5.0",
     "@tsparticles/react": "^3.0.0",
@@ -32,9 +33,7 @@
     "react-icons": "^5.3.0",
     "react-lottie": "^1.2.4",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7",
-    "three": "^0.167.1",
-    "three-globe": "^2.31.1"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",

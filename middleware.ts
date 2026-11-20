@@ -13,8 +13,11 @@ export default authMiddleware({
     '/',
     '/community',
     '/events',
+    '/events/*',
     '/meetup',
+    '/talks',
     '/sign-up',
+    '/auth/callback',
   ]
 })
 

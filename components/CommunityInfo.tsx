@@ -2,128 +2,89 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { ArrowButton } from './ui/ArrowButton';
+import { SectionLabel } from './ui/Launch';
+
+const ease = [0.22, 1, 0.36, 1] as const;
+
+const features = [
+  {
+    image: '/images/thiings/learn.png',
+    title: 'Learn',
+    kicker: 'Workshops & webinars',
+    description:
+      'Hands-on sessions and resources to level up your tech skills and stay ahead of the curve.',
+  },
+  {
+    image: '/images/thiings/connect.png',
+    title: 'Connect',
+    kicker: 'Mentors & peers',
+    description:
+      'Meet industry professionals, mentors and fellow developers in a supportive, welcoming space.',
+  },
+  {
+    image: '/images/thiings/build.png',
+    title: 'Build',
+    kicker: 'Challenges & projects',
+    description:
+      'Take on monthly challenges, collaborate on projects and showcase your work to the community.',
+  },
+];
 
 const CommunityInfo = () => {
-  const features = [
-    {
-      id: 1,
-      image: '/images/thiings/learn.png',
-      title: 'Learn',
-      description: 'Access workshops, webinars, and resources to level up your tech skills and stay ahead of the curve.',
-    },
-    {
-      id: 2,
-      image: '/images/thiings/connect.png',
-      title: 'Connect',
-      description: 'Network with industry professionals, mentors, and fellow developers in a supportive environment.',
-    },
-    {
-      id: 3,
-      image: '/images/thiings/build.png',
-      title: 'Build',
-      description: 'Participate in monthly challenges, collaborate on projects, and showcase your work to the community.',
-    },
-  ];
-
-  const stats = [
-    { value: '1900+', label: 'Members' },
-    { value: '50+', label: 'Events & Workshops' },
-    { value: '4+', label: 'Years Growing' },
-  ];
-
   return (
-    
-    <div className="relative py-20 px-6 gradient-background overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-radial from-orange-500/10 via-orange-500/5 to-transparent pointer-events-none" />
-      
-      <div className="relative max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4">
-            <span className="bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">
-              What Makes TechThrusters Special
-            </span>
+    <section className="border-y border-ink/10 bg-paper-2 text-ink">
+      <div className="mx-auto grid max-w-7xl gap-14 px-6 py-20 md:py-28 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        <motion.div
+          className="lg:sticky lg:top-32 lg:self-start"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, ease }}
+        >
+          <SectionLabel className="mb-4">Why TechThrusters</SectionLabel>
+          <h2 className="display text-4xl md:text-6xl">
+            One community.
+            <br />
+            <span className="accent text-ember">Every</span> stage of
+            your career.
           </h2>
-          
-          <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
-            A thriving ecosystem where learning, networking, and innovation come together to shape the future of tech.
+          <p className="mt-6 max-w-md text-lg leading-relaxed text-ink-soft">
+            Whether you&apos;re writing your first line of code or shipping to millions, there&apos;s a
+            place for you here. Learning, networking and building, all in one place.
           </p>
-        </div>
+          <div className="mt-8">
+            <ArrowButton href="/community" tone="ink">
+              Our story
+            </ArrowButton>
+          </div>
+        </motion.div>
 
-        {/* Features Grid */}
-        <div className="flex flex-col md:flex-row items-stretch justify-center gap-6 mb-16 max-w-5xl mx-auto">
-          {features.map((feature, index) => (
-            <div
-              key={feature.id}
-              className="group relative w-full max-w-[320px] md:max-w-[320px] mx-auto md:mx-0"
-              style={{ 
-                animationDelay: `${index * 100}ms`,
-                willChange: 'transform'
-              }}
+        <div className="divide-y divide-ink/10 border-y border-ink/10">
+          {features.map((f, i) => (
+            <motion.div
+              key={f.title}
+              className="group grid grid-cols-[auto_1fr] items-start gap-6 py-8 md:gap-8 md:py-10"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.5, delay: i * 0.06, ease }}
             >
-              {/* Gradient Border Effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500/20 via-orange-400/10 to-orange-500/20 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              {/* Card */}
-              <div className="relative bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:border-orange-500/40 transition-all duration-500 group-hover:shadow-[0_8px_30px_rgba(197,79,14,0.12)] h-full flex flex-col items-center text-center">
-                {/* Glow Effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-orange-500/0 via-orange-500/0 to-orange-500/0 group-hover:from-orange-500/5 group-hover:via-orange-500/0 group-hover:to-orange-500/5 transition-all duration-500 pointer-events-none" />
-                
-                {/* Icon Container */}
-                <div className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center mb-6 flex-shrink-0">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-600/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    <Image
-                      src={feature.image}
-                      alt={feature.title}
-                      width={96}
-                      height={96}
-                      className="object-contain w-full h-full relative z-10"
-                    />
-                  </div>
-                </div>
-                
-                {/* Content */}
-                <h3 className="text-2xl font-bold text-white mb-3 flex-shrink-0 relative z-10 group-hover:text-orange-200 transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-300/90 text-sm leading-relaxed mt-auto relative z-10 group-hover:text-gray-200 transition-colors duration-300">
-                  {feature.description}
-                </p>
+              <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-ink/10 bg-paper shadow-[0_1px_0_rgba(26,18,11,0.05)] transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105 md:h-24 md:w-24">
+                <Image src={f.image} alt="" width={72} height={72} className="h-14 w-14 object-contain md:h-16 md:w-16" />
               </div>
-            </div>
+              <div>
+                <h3 className="display text-3xl md:text-4xl">{f.title}</h3>
+                <p className="eyebrow mt-3 text-ink/50">{f.kicker}</p>
+                <p className="mt-2 max-w-md leading-relaxed text-ink-soft">{f.description}</p>
+              </div>
+            </motion.div>
           ))}
         </div>
-
-        {/* Stats Section */}
-        <div className="relative group">
-          {/* Gradient Border */}
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500/10 via-transparent to-orange-500/10 rounded-2xl blur opacity-50" />
-          
-          <div className="relative bg-gradient-to-br from-black/40 via-black/30 to-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 hover:border-orange-500/30 transition-all duration-500">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-              {stats.map((stat, index) => (
-                <div 
-                  key={index} 
-                  className="text-center group/stat"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-b from-white via-white to-white/80 bg-clip-text text-transparent mb-2 group-hover/stat:from-orange-400 group-hover/stat:via-orange-300 group-hover/stat:to-orange-400 transition-all duration-500">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm md:text-base text-gray-300/80 group-hover/stat:text-gray-200 transition-colors duration-300">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default CommunityInfo;
-
