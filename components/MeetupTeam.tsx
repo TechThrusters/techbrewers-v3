@@ -40,7 +40,7 @@ function Team() {
             <SectionLabel index="02" className="mb-4">Speaker archive</SectionLabel>
             <h2 className="display max-w-2xl text-4xl text-ink md:text-6xl">
               The voices who{" "}
-              <span className="font-serif font-normal italic tracking-normal text-ember">took the stage.</span>
+              <span className="accent text-ember">took the stage.</span>
             </h2>
           </div>
           <p className="max-w-sm text-ink-soft">
@@ -86,7 +86,9 @@ function Team() {
           >
             <span className="font-mono text-[10px] tracking-wider text-flare group-hover:text-paper">Your turn</span>
             <span>
-              <span className="block font-serif text-2xl italic leading-tight md:text-3xl">Want to speak?</span>
+              <span className="block text-2xl font-semibold leading-tight tracking-tight md:text-3xl">
+                Want to <span className="accent text-flare group-hover:text-paper">speak?</span>
+              </span>
               <span className="mt-2 inline-flex items-center gap-1 text-xs text-paper/70 group-hover:text-paper">
                 Apply for TechThrusters Talks
                 <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />

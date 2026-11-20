@@ -109,7 +109,7 @@ export function PageHeader({
             {accent && (
               <>
                 {' '}
-                <span className="font-serif font-normal italic tracking-[-0.01em] text-ember">{accent}</span>
+                <span className="accent text-ember">{accent}</span>
               </>
             )}
           </h1>

@@ -38,7 +38,7 @@ export default function SignUpPage() {
             <SectionLabel>Sign up</SectionLabel>
             <h1 className="display mt-5 text-5xl sm:text-6xl lg:text-7xl">
               Join the{' '}
-              <span className="font-serif font-normal italic tracking-[-0.01em] text-ember">
+              <span className="accent text-ember">
                 community.
               </span>
             </h1>

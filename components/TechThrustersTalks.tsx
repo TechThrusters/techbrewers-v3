@@ -40,11 +40,11 @@ const TechThrustersTalks = () => {
           </SectionLabel>
           <h2
             id="techthrusters-talks-heading"
-            className="mx-auto mt-6 max-w-5xl font-serif text-5xl leading-[1.05] md:text-7xl"
+            className="display mx-auto mt-6 max-w-4xl text-4xl md:text-6xl"
           >
             Got something worth sharing?
             <br />
-            <span className="italic text-flare">Take the stage.</span>
+            <span className="accent text-flare">Take the stage.</span>
           </h2>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-paper/70">
             Lightning talks, panels and conversations with the community. Pitch your session idea in a

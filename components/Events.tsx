@@ -67,7 +67,7 @@ function Events() {
               <Radio className="h-6 w-6" aria-hidden />
             </div>
             <p className="eyebrow mt-6 text-ink/50">Nothing scheduled yet</p>
-            <h2 className="display mt-3 text-3xl text-ink md:text-4xl">No upcoming sessions right now.</h2>
+            <h2 className="display mt-3 text-3xl text-ink md:text-4xl">No upcoming sessions <span className="accent text-ember">right now.</span></h2>
             <p className="mx-auto mt-3 max-w-md text-ink-soft">
               Check back soon for new events and workshops. In the meantime, catch up on{" "}
               <Link href="/events/livestreams" className="font-medium text-ember underline underline-offset-2 hover:text-ember-bright">

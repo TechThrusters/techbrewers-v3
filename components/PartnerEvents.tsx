@@ -46,7 +46,7 @@ function PartnerEvents() {
           </ul>
         ) : (
           <div className="rounded-[1.75rem] border border-dashed border-ink/20 bg-white/50 px-6 py-14 text-center">
-            <p className="display text-2xl text-ink md:text-3xl">Partner events will be listed here soon.</p>
+            <p className="display text-2xl text-ink md:text-3xl">Partner events will be listed here <span className="accent text-ember">soon.</span></p>
             <p className="mt-3 text-ink-soft">
               Check back for meetups we are co-hosting with other communities.
             </p>

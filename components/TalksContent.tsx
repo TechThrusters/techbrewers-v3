@@ -79,10 +79,10 @@ export default function TalksContent() {
             transition={{ duration: 0.5, ease }}
           >
             <SectionLabel index="01" tone="light" className="mb-4">How to apply</SectionLabel>
-            <h2 className="font-serif text-5xl leading-[1.05] md:text-6xl">
+            <h2 className="display text-4xl md:text-6xl">
               Have something to share?
               <br />
-              <span className="italic text-flare">We&apos;d love to hear it.</span>
+              <span className="accent text-flare">We&apos;d love to hear it.</span>
             </h2>
             <div className="mt-8 max-w-xl space-y-5 leading-relaxed text-paper/75">
               <p>

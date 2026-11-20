@@ -15,7 +15,7 @@ function CardCarousel() {
         <SectionLabel index="01" className="mb-4">Photo archive</SectionLabel>
         <h2 className="display max-w-3xl text-4xl text-ink md:text-6xl">
           Glimpses from our{" "}
-          <span className="font-serif font-normal italic tracking-normal text-ember">past meetups.</span>
+          <span className="accent text-ember">past meetups.</span>
         </h2>
         <p className="mt-4 max-w-xl text-ink-soft">Tap a card to open the full gallery.</p>
       </div>

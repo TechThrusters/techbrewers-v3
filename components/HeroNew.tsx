@@ -58,7 +58,7 @@ const HeroNew = () => {
             Learn. Connect.
             <br />
             Build{' '}
-            <span className="font-serif font-normal italic tracking-[-0.01em] text-ember">
+            <span className="accent text-ember">
               together.
             </span>
           </motion.h1>

@@ -47,7 +47,7 @@ const CommunityInfo = () => {
           <h2 className="display text-4xl md:text-6xl">
             One community.
             <br />
-            <span className="font-serif font-normal italic tracking-normal text-ember">Every</span> stage of
+            <span className="accent text-ember">Every</span> stage of
             your career.
           </h2>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-ink-soft">

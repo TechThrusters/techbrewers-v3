@@ -48,10 +48,10 @@ const MeetTheTeam = () => {
           transition={{ duration: 0.5, ease }}
         >
           <SectionLabel index="04" className="mb-4 justify-center">The team</SectionLabel>
-          <h2 className="font-serif text-5xl leading-[1.05] md:text-7xl">
+          <h2 className="display text-4xl md:text-6xl">
             The people who make it
             <br />
-            <span className="italic text-ember">happen, every day.</span>
+            <span className="accent text-ember">happen, every day.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-ink-soft">
             We&apos;re more than just a team: we&apos;re a close-knit family of passionate individuals.

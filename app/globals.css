@@ -403,7 +403,17 @@ body {
     line-height: 0.98;
   }
 
-  /* Mono "mission control" label */
+  /* Serif italic accent word/phrase inside a sans display heading.
+     Medium weight balances it against the bold grotesk. */
+  .accent {
+    font-family: var(--font-serif), Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    font-optical-sizing: auto;
+  }
+
+  /* Mono label */
   .eyebrow {
     font-family: var(--font-mono), ui-monospace, monospace;
     font-size: 0.72rem;

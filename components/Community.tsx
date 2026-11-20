@@ -111,7 +111,7 @@ const Community = () => {
             <SectionLabel index="01" className="mb-4">Our story</SectionLabel>
             <h2 className="display text-4xl md:text-6xl">
               Our{' '}
-              <span className="font-serif font-normal italic tracking-normal text-ember">journey</span>
+              <span className="accent text-ember">journey</span>
               {' '}so far.
             </h2>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-ink-soft">
@@ -219,7 +219,7 @@ const FAQSection = () => {
           <SectionLabel index="02" className="mb-4">FAQ</SectionLabel>
           <h2 className="display text-4xl md:text-6xl">
             Questions,{' '}
-            <span className="font-serif font-normal italic tracking-normal text-ember">answered.</span>
+            <span className="accent text-ember">answered.</span>
           </h2>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-ink-soft">
             Have questions? We&apos;ve got answers. Here are some common questions about our community.
