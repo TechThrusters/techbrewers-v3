@@ -29,6 +29,7 @@ const config = {
   		fontFamily: {
   			sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
   			serif: ['var(--font-serif)', 'Georgia', 'serif'],
+  			mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
   		},
   		colors: {
   			// Editorial palette (homepage redesign)
@@ -46,6 +47,10 @@ const config = {
   				deep: '#2B1209',
   				night: '#160C06',
   			},
+  			// brand-derived tile colours
+  			flare: '#F6B44B',
+  			clay: '#E9875B',
+  			espresso: '#3A1F12',
   			black: {
   				'100': '#000319',
   				'200': 'rgba(17, 25, 40, 0.75)',

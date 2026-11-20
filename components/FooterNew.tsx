@@ -60,7 +60,7 @@ const FooterNew = () => {
           <h2 className="font-serif text-4xl leading-[1.05] md:text-6xl">
             Your next big thing
             <br />
-            <span className="italic text-[#F2A07B]">starts with hello.</span>
+            <span className="italic text-flare">starts with hello.</span>
           </h2>
           <ArrowButton href={DISCORD_URL} external tone="paper">
             Join the Discord

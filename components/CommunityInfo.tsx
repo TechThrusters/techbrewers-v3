@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowButton } from './ui/ArrowButton';
+import { SectionLabel } from './ui/Launch';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -42,7 +43,7 @@ const CommunityInfo = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease }}
         >
-          <p className="eyebrow mb-4 text-ember">Why TechThrusters</p>
+          <SectionLabel index="02" className="mb-4">Why TechThrusters</SectionLabel>
           <h2 className="display text-4xl md:text-6xl">
             One community.
             <br />
@@ -75,7 +76,7 @@ const CommunityInfo = () => {
               </div>
               <div>
                 <div className="flex items-baseline gap-3">
-                  <span className="font-serif text-lg italic text-ink/40">0{i + 1}</span>
+                  <span className="font-mono text-xs text-ember">/0{i + 1}</span>
                   <h3 className="display text-3xl md:text-4xl">{f.title}</h3>
                 </div>
                 <p className="eyebrow mt-3 text-ink/50">{f.kicker}</p>

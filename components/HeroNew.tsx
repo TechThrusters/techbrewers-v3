@@ -7,15 +7,16 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import Navbar from './Navbar';
 import { ArrowButton } from './ui/ArrowButton';
+import { Orbits } from './ui/Launch';
 import { DISCORD_URL } from '@/lib/constants';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const stats = [
-  { value: '1,900+', label: 'Members', tile: 'bg-[#F4C64E] text-ink', avatar: '/images/header/1.png' },
-  { value: '50+', label: 'Events & workshops', tile: 'bg-[#F2A07B] text-ink', avatar: '/images/header/2.png' },
-  { value: '10', label: 'Countries', tile: 'bg-[#1F5C55] text-paper', avatar: '/images/header/3.png' },
-  { value: '4 yrs', label: 'And growing', tile: 'bg-ember text-paper', avatar: '/images/header/5.png' },
+  { value: '1,900+', label: 'Members', code: 'CREW', tile: 'bg-flare text-ink', avatar: '/images/header/1.png' },
+  { value: '50+', label: 'Events & workshops', code: 'LAUNCHES', tile: 'bg-paper text-ink ring-1 ring-inset ring-ink/10', avatar: '/images/header/2.png' },
+  { value: '10', label: 'Countries', code: 'REACH', tile: 'bg-espresso text-paper', avatar: '/images/header/3.png' },
+  { value: '4 yrs', label: 'And growing', code: 'IN ORBIT', tile: 'bg-ember text-paper', avatar: '/images/header/5.png' },
 ];
 
 const HeroNew = () => {
@@ -30,12 +31,8 @@ const HeroNew = () => {
         };
 
   return (
-    <section className="relative overflow-hidden paper-grid text-ink">
-      {/* soften the grid towards the edges */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_30%_40%,transparent_0%,#F5F0E6_85%)]"
-      />
+    <section className="relative overflow-hidden bg-paper text-ink">
+      <div aria-hidden className="absolute inset-0 star-field fade-edges" />
 
       <Navbar />
 
@@ -62,7 +59,7 @@ const HeroNew = () => {
             Learn. Connect.
             <br />
             Build{' '}
-            <span className="swoosh font-serif text-[1.08em] font-normal italic tracking-normal text-ember">
+            <span className="trail font-serif text-[1.08em] font-normal italic tracking-normal text-ember">
               together.
             </span>
           </motion.h1>
@@ -89,8 +86,10 @@ const HeroNew = () => {
           </motion.div>
         </div>
 
-        {/* Stat tiles */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+        {/* Stat tiles, floating in orbit */}
+        <div className="relative">
+        <Orbits className="absolute left-1/2 top-1/2 h-[135%] w-[135%] -translate-x-1/2 -translate-y-1/2" />
+        <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
@@ -101,19 +100,23 @@ const HeroNew = () => {
                     animate: { opacity: 1, y: 0, rotate: 0 },
                     transition: { duration: 0.7, delay: 0.2 + i * 0.08, ease },
                   })}
-              className={`relative flex aspect-[5/4] flex-col justify-between overflow-hidden rounded-2xl p-5 sm:p-6 ${s.tile} ${
-                i % 2 ? 'translate-y-6' : ''
+              className={`relative flex aspect-[5/4] flex-col justify-between overflow-hidden rounded-[1.75rem] p-4 shadow-[0_18px_40px_-24px_rgba(26,18,11,0.5)] sm:p-6 ${s.tile} ${
+                i % 2 ? 'sm:translate-y-6' : ''
               }`}
             >
-              <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-white/70 sm:h-14 sm:w-14">
-                <Image src={s.avatar} alt="" fill sizes="56px" className="scale-110 object-cover" />
+              <div className="flex items-start justify-between">
+                <div className="relative h-10 w-10 overflow-hidden rounded-full ring-2 ring-white/70 sm:h-14 sm:w-14">
+                  <Image src={s.avatar} alt="" fill sizes="56px" className="scale-110 object-cover" />
+                </div>
+                <span className="font-mono text-[10px] tracking-wider opacity-60">{s.code}</span>
               </div>
               <div>
-                <div className="display text-4xl sm:text-5xl">{s.value}</div>
-                <div className="mt-1 text-sm font-medium opacity-80">{s.label}</div>
+                <div className="display text-3xl sm:text-5xl">{s.value}</div>
+                <div className="mt-1 text-xs font-medium opacity-80 sm:text-sm">{s.label}</div>
               </div>
             </motion.div>
           ))}
+        </div>
         </div>
       </div>
     </section>
