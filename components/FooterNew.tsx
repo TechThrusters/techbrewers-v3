@@ -18,6 +18,7 @@ const columns = [
       { name: 'Community', href: '/community' },
       { name: 'Meetups', href: '/meetup' },
       { name: 'TechThrusters Talks', href: '/talks' },
+      { name: 'Sign in', href: '/sign-up' },
     ],
   },
   {
