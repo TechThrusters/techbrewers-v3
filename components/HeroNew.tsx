@@ -59,7 +59,7 @@ const HeroNew = () => {
             Learn. Connect.
             <br />
             Build{' '}
-            <span className="trail font-serif text-[1.08em] font-normal italic tracking-normal text-ember">
+            <span className="trail font-serif font-normal italic tracking-normal text-ember">
               together.
             </span>
           </motion.h1>
@@ -88,7 +88,7 @@ const HeroNew = () => {
 
         {/* Stat tiles, floating in orbit */}
         <div className="relative">
-        <Orbits className="absolute left-1/2 top-1/2 h-[135%] w-[135%] -translate-x-1/2 -translate-y-1/2" />
+        <Orbits className="absolute left-1/2 top-1/2 h-[150%] w-[150%] -translate-x-1/2 -translate-y-1/2 sm:h-[165%] sm:w-[165%]" />
         <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
           {stats.map((s, i) => (
             <motion.div

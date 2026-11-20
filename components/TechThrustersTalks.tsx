@@ -27,7 +27,7 @@ const TechThrustersTalks = () => {
         aria-hidden
         className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-ember/30 blur-[120px]"
       />
-      <Orbits tone="paper" className="absolute left-1/2 top-1/2 h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 opacity-70" />
+      <Orbits tone="paper" className="absolute left-1/2 top-[42%] h-[760px] w-[760px] -translate-x-1/2 -translate-y-1/2 opacity-80 md:h-[1180px] md:w-[1180px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 py-24 text-center md:py-32">
         <motion.div
@@ -41,11 +41,11 @@ const TechThrustersTalks = () => {
           </SectionLabel>
           <h2
             id="techthrusters-talks-heading"
-            className="mx-auto mt-6 max-w-4xl font-serif text-5xl leading-[1.05] md:text-7xl"
+            className="mx-auto mt-6 max-w-5xl font-serif text-5xl leading-[1.05] md:text-7xl"
           >
             Got something worth sharing?
             <br />
-            <span className="trail italic text-flare">Take the stage.</span>
+            <span className="trail italic text-flare [--trail-bg:#2B1209]">Take the stage.</span>
           </h2>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-paper/70">
             Lightning talks, panels and conversations with the community. Pitch your session idea in a

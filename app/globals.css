@@ -399,8 +399,8 @@ body {
   /* Big, tightly tracked display headings */
   .display {
     font-weight: 600;
-    letter-spacing: -0.045em;
-    line-height: 0.95;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
   }
 
   /* Mono "mission control" label */
@@ -408,41 +408,42 @@ body {
     font-family: var(--font-mono), ui-monospace, monospace;
     font-size: 0.72rem;
     font-weight: 500;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
   }
 
-  /* Serif italic accent with an exhaust trail: a tapered bar that
-     fades in from the left and ends in a bright "engine" dot. */
+  /* Serif italic accent with a flight path underneath: a hairline that
+     fades in from the left, sits clear of descenders, and ends in a small
+     hollow "orbit node". */
   .trail {
     position: relative;
     display: inline-block;
-    padding-right: 0.08em;
+    padding-right: 0.32em;
+    padding-bottom: 0.14em;
   }
   .trail::after {
     content: '';
     position: absolute;
-    left: 6%;
-    right: 0.05em;
-    bottom: 0.02em;
-    height: 0.07em;
-    min-height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, transparent 0%, currentColor 85%);
-    opacity: 0.9;
+    left: 0;
+    right: 0.3em;
+    bottom: -0.06em;
+    height: max(1.5px, 0.03em);
+    background: linear-gradient(90deg, transparent 0%, currentColor 40%);
+    opacity: 0.55;
   }
   .trail::before {
     content: '';
     position: absolute;
-    right: -0.06em;
-    bottom: -0.02em;
-    width: 0.16em;
-    height: 0.16em;
-    min-width: 6px;
-    min-height: 6px;
+    right: 0.06em;
+    bottom: calc(-0.06em - 0.11em + max(0.75px, 0.015em));
+    width: 0.22em;
+    height: 0.22em;
+    min-width: 8px;
+    min-height: 8px;
+    box-sizing: border-box;
     border-radius: 999px;
-    background: currentColor;
-    box-shadow: 0 0 0.35em currentColor;
+    border: max(1.5px, 0.03em) solid currentColor;
+    background: var(--trail-bg, #F5F0E6);
   }
 
   @keyframes orbit-spin {

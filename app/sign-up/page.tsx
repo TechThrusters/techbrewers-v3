@@ -39,7 +39,7 @@ export default function SignUpPage() {
             <SectionLabel>Boarding pass</SectionLabel>
             <h1 className="display mt-5 text-5xl sm:text-6xl lg:text-7xl">
               Join the{' '}
-              <span className="trail font-serif text-[1.08em] font-normal italic tracking-normal text-ember">
+              <span className="trail font-serif font-normal italic tracking-normal text-ember">
                 crew.
               </span>
             </h1>

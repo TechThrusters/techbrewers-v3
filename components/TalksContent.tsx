@@ -78,7 +78,7 @@ export default function TalksContent() {
             <h2 className="font-serif text-5xl leading-[1.05] md:text-6xl">
               Have something to share?
               <br />
-              <span className="trail italic text-flare">We&apos;d love to hear it.</span>
+              <span className="trail italic text-flare [--trail-bg:#2B1209]">We&apos;d love to hear it.</span>
             </h2>
             <div className="mt-8 max-w-xl space-y-5 leading-relaxed text-paper/75">
               <p>

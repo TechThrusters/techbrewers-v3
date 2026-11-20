@@ -20,7 +20,7 @@ export default function NotFound() {
         <p className="eyebrow text-ember">Error 404 · Lost in space</p>
         <h1 className="display mt-4 text-5xl sm:text-7xl">
           Page not{" "}
-          <span className="trail font-serif text-[1.08em] font-normal italic tracking-normal text-ember">found.</span>
+          <span className="trail font-serif font-normal italic tracking-normal text-ember">found.</span>
         </h1>
         <p className="mx-auto mt-6 max-w-md text-lg text-ink-soft">
           Oops! The page you&apos;re looking for doesn&apos;t exist.
